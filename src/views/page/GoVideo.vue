@@ -46,8 +46,8 @@
           <div class="field">
             <label class="label">
               {{ $t("page.video.link") }}
-              <a class="button is-text index-button-copy" @click="copy">
-                {{ $t("copy.text") }}
+              <a class="button is-text index-button-copy" @click="download">
+                {{ $t("page.video.download") }}
               </a>
             </label>
             <div class="control">
@@ -141,8 +141,8 @@ export default {
         Flv(options);
       });
     },
-    copy() {
-      this.$copyText(this.videoUrl);
+    download() {
+      window.open(this.videoUrl);
     },
   },
   computed: {
